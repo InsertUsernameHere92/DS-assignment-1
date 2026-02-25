@@ -1,6 +1,8 @@
 """
 Django settings for in_class_thing project.
 
+This is a change
+
 Based on by 'django-admin startproject' using Django 2.1.2.
 
 For more information on this file, see
