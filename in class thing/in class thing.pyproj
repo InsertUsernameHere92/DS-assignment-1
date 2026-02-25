@@ -3,6 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>in class thing</Name>
     <RootNamespace>in class thing</RootNamespace>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -34,12 +35,24 @@
     <Compile Include="in_class_thing\settings.py" />
     <Compile Include="in_class_thing\urls.py" />
     <Compile Include="in_class_thing\wsgi.py" />
+    <Compile Include="MyApp1\admin.py" />
+    <Compile Include="MyApp1\apps.py" />
+    <Compile Include="MyApp1\migrations\__init__.py" />
+    <Compile Include="MyApp1\models.py" />
+    <Compile Include="MyApp1\tests.py" />
+    <Compile Include="MyApp1\views.py" />
+    <Compile Include="MyApp1\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyApp1\templates\MyApp1\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="in_class_thing\" />
+    <Folder Include="MyApp1\" />
+    <Folder Include="MyApp1\migrations\" />
+    <Folder Include="MyApp1\templates\" />
+    <Folder Include="MyApp1\templates\MyApp1\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
