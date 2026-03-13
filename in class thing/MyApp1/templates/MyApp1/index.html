@@ -1,34 +1,15 @@
 <html>
 <head>
 	<title>
-		Teachers
+		Home
 	</title>
-	<style>
-		table, th, td {
-			border: 2px solid black;
-			border-collapse: collapse;
-		}
-	</style>
 </head>
 <body>
-	<strong>
-		Teachers:
-	</strong>
-	{% if content %}
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Teaching Area</th>
-		</tr>
-		{% for teach in content %}
-		<tr>
-			<td>{{teach.Name}}</td>
-			<td>{{teach.Area}}</td>
-		</tr>
-		{% endfor %}
-	</table>
-	{% else %}
-	<strong>No data!</strong>
-	{% endif %}
+	<form action="{% url 'teachers' %}" method="post">
+		{% csrf_token %}
+		<button type="submit">
+			View Teachers
+		</button>
+	</form>
 </body>
 </html>
