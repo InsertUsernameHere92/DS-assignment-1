@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>
+        Courses
+    </title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <strong>
+        Courses:
+    </strong>
+    {% if content %}
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+        </tr>
+        {% for course in content %}
+        <tr>
+            <td>{{course.Title}}</td>
+            <td>{{course.Code}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No data!</strong>
+    {% endif %}
+</body>
+</html>
