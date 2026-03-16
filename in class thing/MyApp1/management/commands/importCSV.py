@@ -16,10 +16,15 @@ class Command(BaseCommand):
         with open(path, 'rt', encoding='utf-8-sig') as f:
             reader = csv.reader(f, dialect='excel')
             count = 0
-            if model:
+            if model == 'teacher':
                 for row in reader:
-                    model.objects.create(Name=row[0],Area=row[1])
-                    count=+1
-                print('Successfully imported ' + str(count) + ' new entries!')
+                    teacher.objects.create(Name=row[0],Area=row[1])
+                    count += 1
+                print('Successfully imported ' + str(count) + ' new teachers!')
+            elif model == 'courses':
+                for row in reader:
+                    courses.objects.create(Title=row[0],Code=row[1])
+                    count += 1
+                print('Successfully imported ' + str(count) + ' new courses!')
             else:
-                print('No model specified! Import failed')
+                print('No model specified! Import failed!')
