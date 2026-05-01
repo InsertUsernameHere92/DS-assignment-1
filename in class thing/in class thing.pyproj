@@ -55,7 +55,6 @@
     <Content Include="MyApp1\templates\MyApp1\index.html" />
     <Content Include="MyApp1\templates\MyApp1\teachers.html" />
     <Content Include="requirements.txt" />
-    <Content Include="DigitalSolutions.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="in_class_thing\" />
