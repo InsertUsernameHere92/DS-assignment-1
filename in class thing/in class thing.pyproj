@@ -55,6 +55,7 @@
     <Content Include="MyApp1\templates\MyApp1\index.html" />
     <Content Include="MyApp1\templates\MyApp1\teachers.html" />
     <Content Include="requirements.txt" />
+    <Content Include="DigitalSolutions.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="in_class_thing\" />
@@ -64,6 +65,7 @@
     <Folder Include="MyApp1\management\" />
     <Folder Include="MyApp1\templates\" />
     <Folder Include="MyApp1\templates\MyApp1\" />
+    <Folder Include="Static\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
