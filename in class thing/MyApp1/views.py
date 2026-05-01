@@ -53,7 +53,7 @@ def report(request):
 def generate_pdf():
     buffer = BytesIO()
     p = canvas.Canvas(buffer)
-    lines = ['Name:', 'Teaching Area:']
+    lines = [('Name:', 'Teaching Area:')]
 
     teachers = teacher.objects.all()
 
