@@ -17,10 +17,11 @@
 			View Courses
 		</button>
 	</form>
-	<p>
-		<a href="{% url 'report'%}">
-			PDF report
-		</a>
-	</p>
+	<form action="{% url 'report'%}" method="post">
+		{% csrf_token %}
+		<button type="submit" style="border: 2px solid black; font-size: large;">
+			PDF Report
+		</button>
+	</form>
 </body>
 </html>

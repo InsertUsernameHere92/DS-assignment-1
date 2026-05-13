@@ -8,3 +8,14 @@ class teacher(models.Model):
 class courses(models.Model):
     Title = models.CharField(max_length=20)
     Code = models.CharField(max_length=10)
+
+class units(models.Model):
+    Title = models.CharField(max_length=20)
+    Code = models.CharField(max_length=10)
+    Assessment_Period = models.CharField(max_length=5)
+    Course_Code = models.CharField(max_length=10)
+
+class student(models.Model):
+    Name = models.CharField(max_length=30)
+    Student_ID = models.CharField(max_length=10)
+    Year_Group = models.CharField(max_length=3)
