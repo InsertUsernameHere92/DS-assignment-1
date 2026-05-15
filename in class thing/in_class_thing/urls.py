@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('teachers/', MyApp1.views.teachers, name='teachers'),
     path('courses/', MyApp1.views.course, name='courses'),
+    path('units/', MyApp1.views.unit, name='units'),
+    path('students/', MyApp1.views.students, name='students'),
     re_path(r'^$', MyApp1.views.index, name='index'),
     re_path(r'^home$', MyApp1.views.index, name='home'),
     path('report/', MyApp1.views.report, name='report'),

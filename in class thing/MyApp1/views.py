@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, FileResponse
 from datetime import datetime
-from .models import teacher, courses
+from .models import teacher, courses, units, student
 from pypdf import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Table
@@ -26,6 +26,22 @@ def course(request):
 
     return render(
         request, "MyApp1/courses.html", {'content': course}
+        )
+
+def viewUnits()
+
+def unit(request):
+    unit = units.objects.all()
+
+    return render(
+        request, "MyApp1/units.html", {'content': unit}
+        )
+
+def students(request):
+    students = student.objects.all()
+
+    return render(
+        request, "MyApp1/students.html", {'content': students}
         )
 
 def report(request):

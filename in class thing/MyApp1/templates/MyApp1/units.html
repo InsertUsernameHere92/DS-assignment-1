@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>
+        Units
+    </title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <strong>
+        Units:
+    </strong>
+    {% if content %}
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Code</th>
+            <th>Assessment Period</th>
+            <th>Course Code</th>
+        </tr>
+        {% for unit in content %}
+        <tr>
+            <td>{{unit.Title}}</td>
+            <td>{{unit.Code}}</td>
+            <td>{{unit.Assessment_Period}}</td>
+            <td>{{unit.Course_Code}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No data!</strong>
+    {% endif %}
+</body>
+</html>

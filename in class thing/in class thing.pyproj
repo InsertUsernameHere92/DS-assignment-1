@@ -53,7 +53,13 @@
   <ItemGroup>
     <Content Include="MyApp1\templates\MyApp1\courses.html" />
     <Content Include="MyApp1\templates\MyApp1\index.html" />
+    <Content Include="MyApp1\templates\MyApp1\students.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="MyApp1\templates\MyApp1\teachers.html" />
+    <Content Include="MyApp1\templates\MyApp1\units.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

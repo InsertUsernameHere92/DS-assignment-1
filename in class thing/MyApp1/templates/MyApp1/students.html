@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>
+        Students
+    </title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <strong>
+        Students:
+    </strong>
+    {% if content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Student ID</th>
+            <th>Year Group</th>
+        </tr>
+        {% for student in content %}
+        <tr>
+            <td>{{student.Name}}</td>
+            <td>{{student.Student_ID}}</td>
+            <td>{{student.Year_Group}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <strong>No data!</strong>
+    {% endif %}
+</body>
+</html>

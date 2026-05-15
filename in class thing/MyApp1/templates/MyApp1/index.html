@@ -17,6 +17,18 @@
 			View Courses
 		</button>
 	</form>
+	<form action="{% url 'units' %}" method="post">
+		{% csrf_token %}
+		<button type="submit" style="border: 2px solid black; font-size: large;">
+			View Units
+		</button>
+	</form>
+	<form action="{% url 'students' %}" method="post">
+		{% csrf_token %}
+		<button type="submit" style="border: 2px solid black; font-size: large;">
+			View Students
+		</button>
+	</form>
 	<form action="{% url 'report'%}" method="post">
 		{% csrf_token %}
 		<button type="submit" style="border: 2px solid black; font-size: large;">
