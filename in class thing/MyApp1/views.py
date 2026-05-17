@@ -26,9 +26,7 @@ def course(request):
 
     return render(
         request, "MyApp1/courses.html", {'content': course}
-        )
-
-def viewUnits()
+        )  
 
 def unit(request):
     unit = units.objects.all()
@@ -42,6 +40,11 @@ def students(request):
 
     return render(
         request, "MyApp1/students.html", {'content': students}
+        )
+
+def outline(request):
+    return render(
+        request, "MyApp1/outline.html"
         )
 
 def report(request):

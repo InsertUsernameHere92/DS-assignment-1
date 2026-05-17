@@ -31,4 +31,5 @@ urlpatterns = [
     re_path(r'^$', MyApp1.views.index, name='index'),
     re_path(r'^home$', MyApp1.views.index, name='home'),
     path('report/', MyApp1.views.report, name='report'),
+    path('outline/', MyApp1.views.outline, name='outline'),
 ]

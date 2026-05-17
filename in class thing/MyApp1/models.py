@@ -13,7 +13,7 @@ class units(models.Model):
     Title = models.CharField(max_length=20)
     Code = models.CharField(max_length=10)
     Assessment_Period = models.CharField(max_length=5)
-    Course_Code = models.CharField(max_length=10)
+    Course = models.ForeignKey(courses, on_delete=models.CASCADE)
 
 class student(models.Model):
     Name = models.CharField(max_length=30)

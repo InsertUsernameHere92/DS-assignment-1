@@ -53,6 +53,9 @@
   <ItemGroup>
     <Content Include="MyApp1\templates\MyApp1\courses.html" />
     <Content Include="MyApp1\templates\MyApp1\index.html" />
+    <Content Include="MyApp1\templates\MyApp1\outline.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="MyApp1\templates\MyApp1\students.html">
       <SubType>Code</SubType>
     </Content>

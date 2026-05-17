@@ -27,7 +27,15 @@
             <td>{{unit.Title}}</td>
             <td>{{unit.Code}}</td>
             <td>{{unit.Assessment_Period}}</td>
-            <td>{{unit.Course_Code}}</td>
+            <td>{{unit.Course.Code}}</td>
+            <td>
+                <form action="{% url 'outline' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" style="border: 2px solid black; font-size: large;">
+                        Edit Outline
+                    </button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </table>
