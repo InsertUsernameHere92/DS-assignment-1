@@ -3,10 +3,34 @@
     <title>
         Unit Outline
     </title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-    <strong>
-        Unit Outline
-    </strong>
+    <label for="unit">Select Unit:</label>
+    <select name="unit" id="unit">
+        {% for unit in content %}
+        <option value="{{unit}}">{{unit.Title}}</option>
+        {% endfor %}
+    </select>
+    <!--<table>
+        <tr>
+            <th>Title</th>
+            <th>Code</th>
+            <th>Assessment Period</th>
+        </tr>
+        {% for unit in content %}
+        {% if unit = ??? %}
+        <tr>
+            <td>{{unit.Title}}</td>
+            <td>{{unit.Code}}</td>
+            <td>{{unit.Assessment_Period}}</td>
+        </tr>
+        {% endfor %}
+    </table>-->
 </body>
 </html>

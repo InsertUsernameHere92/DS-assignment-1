@@ -7,6 +7,7 @@ from reportlab.pdfgen import canvas
 from reportlab.platypus import Table
 from django.contrib.staticfiles.storage import staticfiles_storage
 from io import BytesIO
+#from lxml import etree, html
 
 # Create your views here.
 def index(request):
@@ -43,8 +44,10 @@ def students(request):
         )
 
 def outline(request):
+    unit = units.objects.all()
+
     return render(
-        request, "MyApp1/outline.html"
+        request, "MyApp1/outline.html", {'content': unit}
         )
 
 def report(request):
@@ -88,3 +91,61 @@ def generate_pdf():
 
     buffer.seek(0)
     return buffer
+
+#def generate_html_pdf(html_path = outline.html):
+    #with open(html_path, "r", encoding="utf-8") as f:
+        #html_content = f.read()
+
+    #tree = html.fromstring(html_content)
+    #styles = getSampleStyleSheet()
+    #doc = SimpleDocTemplate(out_path, pagesize=A4, leftMargin=20*mm, rightMargin=20*mm, topMargin=20*mm, bottomMargin=20*mm)
+    #story = []
+
+    # Title
+    #h1 = tree.xpath("//h1/text()")
+    #if h1:
+        #story.append(Paragraph(h1[0], styles["Title"]))
+        #story.append(Spacer(1, 6 * mm))
+
+    # Invoice meta (example mapping for two-column rows)
+    #meta_rows = []
+    #for tr in tree.xpath("//table[contains(@class, 'details')][1]//tr"):
+        #tds = [td.text_content().strip() for td in tr.xpath("./td")]
+        #if len(tds) == 2:
+            #meta_rows.append([tds[0], tds[1]])
+    #if meta_rows:
+        #meta_tbl = Table(meta_rows, colWidths=[80 * mm, 80 * mm])
+        #meta_tbl.setStyle(TableStyle([
+            #("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F7F7F7")),
+            #("BOX", (0, 0), (-1, -1), 0.5, colors.HexColor("#DDDDDD")),
+            #("INNERGRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#DDDDDD")),
+            #("FONT", (0, 0), (-1, -1), "Helvetica", 10),
+        #]))
+        #story.append(meta_tbl)
+        #story.append(Spacer(1, 6 * mm))
+
+    # Items table (assuming the second .details table contains items)
+    #item_table = tree.xpath("//table[contains(@class, 'details')][2]")
+    #if item_table:
+        #rows = []
+        #for tr in item_table.xpath(".//tr"):
+            #cells = [td.text_content().strip() for td in tr.xpath("./td")]
+            #if cells:
+                #rows.append(cells)
+        #item_tbl = Table(rows, colWidths=[100 * mm, 40 * mm])
+        #item_tbl.setStyle(TableStyle([
+            #("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#EEEEEE")),
+            #("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#CCCCCC")),
+            #("ALIGN", (1, 1), (-1, -1), "RIGHT"),
+            #("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        #]))
+        #story.append(item_tbl)
+        #story.append(Spacer(1, 6 * mm))
+
+    # Totals
+    #total_text = tree.xpath("//table[contains(@class, 'totals')]//strong/parent::td/text()")
+    #if total_text:
+        #story.append(Paragraph(f"<b>Total:</b> {total_text[0].strip()}", styles["Normal"]))
+
+    #doc.build(story)
+
